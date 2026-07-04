@@ -1,16 +1,73 @@
-# React + Vite
+# Paint App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A browser-based drawing app built with React, Vite, and SVG. Create simple vector shapes on a full-screen canvas, color them, move them around, rotate selected shapes, and delete them when you no longer need them.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- https://react-canvas-ruby.vercel.app/
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Draw rectangles, circles, and triangles on the canvas.
+- Pick from a built-in color palette and apply colors to selected shapes.
+- Select shapes directly on the canvas.
+- Drag selected shapes to reposition them.
+- Rotate selected shapes with the rotation handle.
+- Remove a selected shape with `Backspace` or `Delete`.
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React 19
+- Vite
+- Tailwind CSS v4
+- SVG for rendering shapes
+
+## Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+## How It Works
+
+- Choose a shape from the toolbox.
+- Click on the canvas to place the shape.
+- Pick a color from the palette to fill the selected shape.
+- Click an existing shape to select it.
+- Drag the selected shape to move it.
+- Use the rotation handle above the selected shape to rotate it.
+- Press `Delete` or `Backspace` to remove the selected shape.
+
+## Project Structure
+
+```text
+src/
+	components/   # Canvas, toolbox, color picker, and rotation handle
+	hooks/        # Interaction logic for drawing, dragging, selecting, coloring, and deleting
+	shapes/       # SVG shape renderers
+```
+
+## Notes
+
+- The app uses SVG shapes, so the canvas stays lightweight and resolution independent.
+- Shape state is managed in React and updated through custom hooks.
